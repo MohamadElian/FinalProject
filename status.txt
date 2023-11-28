@@ -1,0 +1,29 @@
+# Status Report
+
+#### Your name
+
+Mohamad Elian
+
+#### Your section leader's name
+
+Elmira
+
+#### Project title
+
+Super Smart Bot
+
+***
+
+Short answers for the below questions suffice. If you want to alter your plan for your project (and obtain approval for the same), be sure to email your section leader directly!
+
+#### What have you done for your project so far?
+
+we started the basics and the beginings of making a discord bot, and now we are currently on the coding part, and we are currently doing a trail and error to see what and how we are going to make this bot work.
+
+#### What have you not done for your project yet?
+
+we still didnt emplment the questioning part of the discord bot.
+
+#### What problems, if any, have you encountered?
+
+its a little tricky because its a very new things to me, and i feel like i need some time to figure out what and how to code some things.
