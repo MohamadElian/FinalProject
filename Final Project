@@ -68,4 +68,4 @@ async def on_message(message):
     await bot.process_commands(message)
 
 # Run the bot with your Discord token
-bot.run("MTE3ODQ2NzE3MDk1MTM4NTA4OA.GU4ENr.qY7xGxQQbFYZw-_6LqIgx-ttQIefbeYyNsvD-o")
+bot.run("Discord Token")
