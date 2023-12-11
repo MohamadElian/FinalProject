@@ -31,7 +31,7 @@ import os
 load_dotenv()
 
 # Set the OpenAI API key
-openai.api_key ='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'
+openai.api_key ='OpenAI Key'
 
 # Print the loaded OpenAI API key for verification
 #print("Loaded OpenAI API key:", openai.api_key)
