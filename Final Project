@@ -1,0 +1,71 @@
+My Name is Mohamad Elian and my partner is Eric Lin, we both coded an AI Bot into a Discord Bot, we did this by using Python and we 
+Connected it to OpenAI, there are two takes when doing the video, there is a bad take and a good take, the bad take had a lot of examples
+of the AI Bot bugging and having a lot of odd replies, i only included the Bad take so it can show a vissual of some complicatitons we 
+went through, some other complications we went through earlier on is that, when coding in the OpenAi Key we Put the Key as a dictiary
+in a different .env file, and we had the orginal file read the key, but for some reason our code wasn't reading the Key, so we dicided to
+just hard code the Key into the orginal file and it work, another issue we faced was that we didnt orginally know that it cost money to 
+put an OpenAI API, but that was easily resolved we added funds into the OpenAi Account and we split the funds evenly between us. 
+
+Our original Project was a discord bot that helps us with online shopping, but then we kept wanting to add more features, then we 
+dicided that an AI Bot can do all the features we wanted and it could be a good bot that we can use in our presonal discord with our 
+friends so we can all use it to help us with things, while we are playing games or just chatting in our VC's, though as you can see 
+in the Bad Take Video there are a lot of buggs in the AI, it still works if your very precised as you can see in the Good Take Video.
+
+Good Take:
+
+https://youtu.be/rMjZY93NCoE
+
+Bad Take:
+
+https://youtu.be/O8KArawQono
+
+Our Code:
+
+import discord
+from discord.ext import commands
+import openai
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env
+load_dotenv()
+
+# Set the OpenAI API key
+openai.api_key ='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'
+
+# Print the loaded OpenAI API key for verification
+#print("Loaded OpenAI API key:", openai.api_key)
+
+# Intents setup
+intents = discord.Intents.default()
+intents.message_content = True
+
+# Initialize the bot with Intents
+bot = commands.Bot(command_prefix="!", intents=intents)
+
+# Event: Bot is ready
+@bot.event
+async def on_ready():
+    print(f"We have logged in as {bot.user}")
+
+# Event: Respond to messages
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+
+    # Use GPT to generate a response
+    prompt = message.content
+    response = openai.Completion.create(
+        engine="text-davinci-002",
+        prompt=prompt,
+        max_tokens=150
+    )["choices"][0]["text"]
+
+    await message.channel.send(response)
+
+    # Don't forget to process commands
+    await bot.process_commands(message)
+
+# Run the bot with your Discord token
+bot.run("MTE3ODQ2NzE3MDk1MTM4NTA4OA.GU4ENr.qY7xGxQQbFYZw-_6LqIgx-ttQIefbeYyNsvD-o")
